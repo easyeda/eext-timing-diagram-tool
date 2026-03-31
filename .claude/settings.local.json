@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(npm run:*)",
-      "Bash(ls -lh build/dist/*.eext)",
-      "Bash(ls -lht build/dist/*.eext)"
-    ]
-  }
-}

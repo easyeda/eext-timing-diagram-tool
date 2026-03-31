@@ -16,3 +16,6 @@
 /tsconfig.json
 .eslintcache
 debug.log
+/test-test.js
+/CLAUDE.md
+/.claude
