@@ -4,6 +4,8 @@
  * 基于WaveDrom的时序图绘制工具，支持在原理图中创建和放置时序图
  */
 import * as extensionConfig from '../extension.json';
+import zhHansLocale from '../locales/zh-Hans.json';
+import enLocale from '../locales/en.json';
 
 // IFrame窗口ID
 const IFRAME_ID = 'timing-diagram-editor';
@@ -14,21 +16,11 @@ export async function activate(status?: 'onStartupFinished', arg?: string): Prom
 
 	// 导入多语言文件
 	try {
-		// 读取中文多语言文件
-		const zhFile = await eda.sys_FileSystem.getExtensionFile('locales/zh-Hans.json');
-		if (zhFile) {
-			const zhContent = await zhFile.text();
-			const zhData = JSON.parse(zhContent);
-			eda.sys_I18n.importMultilingual('zh-Hans', zhData);
-		}
+		// 导入中文多语言
+		eda.sys_I18n.importMultilingual('zh-Hans', zhHansLocale);
 
-		// 读取英文多语言文件
-		const enFile = await eda.sys_FileSystem.getExtensionFile('locales/en.json');
-		if (enFile) {
-			const enContent = await enFile.text();
-			const enData = JSON.parse(enContent);
-			eda.sys_I18n.importMultilingual('en', enData);
-		}
+		// 导入英文多语言
+		eda.sys_I18n.importMultilingual('en', enLocale);
 
 		console.log('[Timing Diagram] Multilingual files imported');
 	} catch (error) {

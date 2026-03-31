@@ -89,24 +89,38 @@ let currentConfigId = null;
 let renderTimeout = null;
 let i18nData = {};
 
+// 语言代码映射
+function normalizeLanguageCode(lang) {
+    // 将各种可能的语言代码统一映射
+    const langMap = {
+        'zh': 'zh-Hans',
+        'zh-CN': 'zh-Hans',
+        'zh-Hans': 'zh-Hans',
+        'zh-cn': 'zh-Hans',
+        'en': 'en',
+        'en-US': 'en',
+        'en-us': 'en'
+    };
+    return langMap[lang] || 'zh-Hans';
+}
+
 // 加载多语言
 async function loadI18n() {
     try {
         const lang = await eda.sys_I18n.getCurrentLanguage();
-        // 使用 EasyEDA 文件系统 API 读取多语言文件
-        const filePath = `locales/${lang}.json`;
-        const file = await eda.sys_FileSystem.getExtensionFile(filePath);
-        if (file) {
-            const content = await file.text();
-            i18nData = JSON.parse(content);
-            applyI18n();
-        } else {
-            throw new Error('File not found');
-        }
+        console.log('[Timing Diagram] Current language:', lang);
+
+        // 规范化语言代码
+        const normalizedLang = normalizeLanguageCode(lang);
+        console.log('[Timing Diagram] Normalized language:', normalizedLang);
+
+        // 从内联的多语言数据中获取
+        i18nData = LOCALES[normalizedLang] || LOCALES['zh-Hans'];
+        applyI18n();
     } catch (error) {
         console.error('[Timing Diagram] Load i18n error:', error);
         // 如果加载失败，使用默认的中文
-        i18nData = {
+        i18nData = LOCALES['zh-Hans'] || {
             'timing-diagram-title': '时序图编辑器',
             'config-list': '配置列表',
             'new-config': '新建配置',

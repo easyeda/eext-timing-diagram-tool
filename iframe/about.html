@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="about-title">关于</title>
+    <script src="/iframe/locales.js"></script>
     <style>
         * {
             margin: 0;
@@ -99,8 +100,8 @@
 <body>
     <div class="about-container">
         <img class="logo" src="/images/logo.png" alt="logo">
-        <h1 class="app-name" data-i18n="about-app-name">时序图工具</h1>
-        <div class="app-version" data-i18n="about-version">版本 1.0.0</div>
+        <h1 class="app-name" data-i18n="about-app-name">WaveDrom时序图</h1>
+        <div class="app-version" data-i18n="about-version">版本 1.0.2</div>
 
         <div class="divider"></div>
 
@@ -111,7 +112,9 @@
 
         <div class="info-item">
             <span class="info-label" data-i18n="about-publisher">发布者：</span>
-            <span>EasyEDA</span>
+            <a class="link" onclick="openLink('https://easyeda.com')">
+				EasyEDA
+            </a>
         </div>
 
         <div class="info-item">
@@ -139,27 +142,41 @@
     <script>
         let i18nData = {};
 
+        // 语言代码映射
+        function normalizeLanguageCode(lang) {
+            // 将各种可能的语言代码统一映射
+            const langMap = {
+                'zh': 'zh-Hans',
+                'zh-CN': 'zh-Hans',
+                'zh-Hans': 'zh-Hans',
+                'zh-cn': 'zh-Hans',
+                'en': 'en',
+                'en-US': 'en',
+                'en-us': 'en'
+            };
+            return langMap[lang] || 'zh-Hans';
+        }
+
         // 加载多语言
         async function loadI18n() {
             try {
                 const lang = await eda.sys_I18n.getCurrentLanguage();
-                // 使用 EasyEDA 文件系统 API 读取多语言文件
-                const filePath = `locales/${lang}.json`;
-                const file = await eda.sys_FileSystem.getExtensionFile(filePath);
-                if (file) {
-                    const content = await file.text();
-                    i18nData = JSON.parse(content);
-                    applyI18n();
-                } else {
-                    throw new Error('File not found');
-                }
+                console.log('[About] Current language:', lang);
+
+                // 规范化语言代码
+                const normalizedLang = normalizeLanguageCode(lang);
+                console.log('[About] Normalized language:', normalizedLang);
+
+                // 从内联的多语言数据中获取
+                i18nData = LOCALES[normalizedLang] || LOCALES['zh-Hans'];
+                applyI18n();
             } catch (error) {
                 console.error('[About] Load i18n error:', error);
                 // 如果加载失败，使用默认的中文
-                i18nData = {
+                i18nData = LOCALES['zh-Hans'] || {
                     'about-title': '关于',
-                    'about-app-name': '时序图工具',
-                    'about-version': '版本 1.0.0',
+                    'about-app-name': 'WaveDrom时序图',
+                    'about-version': '版本 1.0.2',
                     'confirm': '确定'
                 };
                 applyI18n();
@@ -169,11 +186,21 @@
         // 应用多语言
         function applyI18n() {
             try {
+                console.log('[About] Applying i18n, data keys:', Object.keys(i18nData).length);
+                console.log('[About] Sample data:', {
+                    'about-app-name': i18nData['about-app-name'],
+                    'about-version': i18nData['about-version'],
+                    'about-description': i18nData['about-description']
+                });
+
                 document.querySelectorAll('[data-i18n]').forEach(el => {
                     if (el && el.nodeType === 1 && typeof el.getAttribute === 'function') {
                         const key = el.getAttribute('data-i18n');
                         if (key && i18nData[key]) {
+                            console.log('[About] Setting', key, '=', i18nData[key]);
                             el.textContent = i18nData[key];
+                        } else {
+                            console.warn('[About] Missing translation for key:', key);
                         }
                     }
                 });

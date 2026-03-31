@@ -1,5 +1,5 @@
 {
-	"timing-diagram-menu": "Timing Diagram",
+	"timing-diagram-menu": "Design Timing Diagram",
 	"open-timing-diagram": "Open Timing Diagram...",
 	"about-timing-diagram": "About...",
 	"timing-diagram-title": "Timing Diagram Editor",
@@ -22,8 +22,8 @@
 	"example-config": "Example Config",
 	"confirm": "Confirm",
 	"about-title": "About",
-	"about-app-name": "Timing Diagram Tool",
-	"about-version": "Version 1.0.0",
+	"about-app-name": "WaveDrom Timing Diagram",
+	"about-version": "Version 1.0.2",
 	"about-description": "A timing diagram tool based on WaveDrom, supporting creation and placement of professional digital timing diagrams in schematics. Generate high-quality waveforms quickly with concise WaveJSON syntax.",
 	"about-publisher": "Publisher:",
 	"about-license": "License:",

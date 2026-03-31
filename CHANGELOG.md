@@ -1,5 +1,12 @@
 # 更新日志 / Changelog
 
+## [1.0.2] - 2026-03-31
+
+### 修复
+
+- 移除eda.sys_FileSystem.getExtensionFile() API的调用，避免安装提示有外部交互提示弹窗
+- 修改名称为“WaveDrom时序图”
+
 ## [1.0.1] - 2026-03-30
 
 ### 修复 / Fixed
