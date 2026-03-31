@@ -7,6 +7,9 @@ on:
       - master  # master 分支触发
   workflow_dispatch:   # 手动触发
 
+permissions:
+  contents: write
+
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
