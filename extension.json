@@ -23,7 +23,7 @@
 		"logo": "./images/logo.png"
 	},
 	"homepage": "https://github.com/easyeda/eext-timing-diagram-tool",
-	"bugs": "https://github.com/easyeda/eext-timing-diagram-tool/issue",
+	"bugs": "https://github.com/easyeda/eext-timing-diagram-tool/issues",
 	"activationEvents": {},
 	"entry": "./dist/index",
 	"dependentExtensions": {},
