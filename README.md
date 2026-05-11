@@ -1,5 +1,7 @@
 # 时序图工具 / Timing Diagram Tool
 
+[English](./README.en.md)
+
 基于 WaveDrom 的时序图绘制工具，支持在 EasyEDA Pro 原理图中创建和放置专业的数字时序图。
 
 A timing diagram tool based on WaveDrom, supporting creation and placement of professional digital timing diagrams in EasyEDA Pro schematics.
