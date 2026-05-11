@@ -1,50 +1,50 @@
 {
-	"name": "eext-timing-diagram-tool",
-	"uuid": "5bcf0208405043499ff5e43def49fac6",
-	"displayName": "WaveDrom时序图",
-	"description": "基于WaveDrom的时序图绘制工具，支持输入WaveJson语法完成时序图生成与预览，放置在原理图中",
-	"version": "1.0.2",
-	"publisher": "EasyEDA",
-	"engines": {
-		"eda": "^3.2.0"
-	},
-	"license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/easyeda/eext-timing-diagram-tool"
-	},
-	"categories": "Schematic",
-	"keywords": [
-		"Timing Diagram",
-		"WaveDrom",
-		"时序图"
-	],
-	"images": {
-		"logo": "./images/logo.png"
-	},
-	"homepage": "https://github.com/easyeda/eext-timing-diagram-tool",
-	"bugs": "https://github.com/easyeda/eext-timing-diagram-tool/issues",
-	"activationEvents": {},
-	"entry": "./dist/index",
-	"dependentExtensions": {},
-	"headerMenus": {
-		"sch": [
-			{
-				"id": "sch-menu",
-				"title": "timing-diagram-menu",
-				"menuItems": [
-					{
-						"id": "open",
-						"title": "open-timing-diagram",
-						"registerFn": "openTimingDiagram"
-					},
-					{
-						"id": "about",
-						"title": "about-timing-diagram",
-						"registerFn": "showAbout"
-					}
-				]
-			}
-		]
-	}
+  "name": "eext-timing-diagram-tool",
+  "uuid": "5bcf0208405043499ff5e43def49fac6",
+  "displayName": "WaveDrom时序图",
+  "description": "基于WaveDrom的时序图绘制工具，支持输入WaveJson语法完成时序图生成与预览，放置在原理图中",
+  "version": "1.0.2",
+  "publisher": "EasyEDA",
+  "engines": {
+    "eda": "^3.2.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/easyeda/eext-timing-diagram-tool"
+  },
+  "categories": "Schematic",
+  "keywords": [
+    "Timing Diagram",
+    "WaveDrom",
+    "时序图"
+  ],
+  "images": {
+    "logo": "./images/logo.png"
+  },
+  "homepage": "https://github.com/easyeda",
+  "bugs": "https://github.com/easyeda/eext-timing-diagram-tool/issues",
+  "activationEvents": {},
+  "entry": "./dist/index",
+  "dependentExtensions": {},
+  "headerMenus": {
+    "sch": [
+      {
+        "id": "sch-menu",
+        "title": "timing-diagram-menu",
+        "menuItems": [
+          {
+            "id": "open",
+            "title": "open-timing-diagram",
+            "registerFn": "openTimingDiagram"
+          },
+          {
+            "id": "about",
+            "title": "about-timing-diagram",
+            "registerFn": "showAbout"
+          }
+        ]
+      }
+    ]
+  }
 }
