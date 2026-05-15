@@ -58,26 +58,25 @@ Effect in schematic:
 Example 1 - Basic Timing Diagram:
 
 ```json
-{ "signal": [
-  { "name": "clk",  "wave": "p.....|..." },
-  { "name": "dat",  "wave": "x.345x|=.x", "data": ["head", "body", "tail", "data"] },
-  { "name": "req",  "wave": "0.1..0|1.0" },
-  {},
-  { "name": "ack",  "wave": "1.....|01." }
-]}
+{
+	"signal": [
+		{ "name": "clk", "wave": "p.....|..." },
+		{ "name": "dat", "wave": "x.345x|=.x", "data": ["head", "body", "tail", "data"] },
+		{ "name": "req", "wave": "0.1..0|1.0" },
+		{},
+		{ "name": "ack", "wave": "1.....|01." }
+	]
+}
 ```
 
 Example 2 - Logic Gate:
 
 ```json
-{ assign:[
-  ["out",
-    ["|",
-      ["&", ["~", "a"], "b"],
-      ["&", ["~", "b"], "a"]
-    ]
-  ]
-]}
+{
+	"assign": [
+		["out", ["|", ["&", ["~", "a"], "b"], ["&", ["~", "b"], "a"]]]
+	]
+}
 ```
 
 For more syntax, refer to WaveDrom official tutorials:
@@ -92,18 +91,18 @@ For more syntax, refer to WaveDrom official tutorials:
 Configuration file format:
 ```json
 {
-  "version": "1.0.0",
-  "exportDate": "2026-03-28T00:00:00.000Z",
-  "appName": "Timing Diagram Tool",
-  "configs": [
-    {
-      "id": "...",
-      "name": "Config Name",
-      "wavejson": "{ signal: [...] }",
-      "createdAt": 1234567890,
-      "updatedAt": 1234567890
-    }
-  ]
+	"version": "1.0.0",
+	"exportDate": "2026-03-28T00:00:00.000Z",
+	"appName": "Timing Diagram Tool",
+	"configs": [
+		{
+			"id": "...",
+			"name": "Config Name",
+			"wavejson": "{ signal: [...] }",
+			"createdAt": 1234567890,
+			"updatedAt": 1234567890
+		}
+	]
 }
 ```
 
@@ -141,7 +140,7 @@ Built `.eext` file is located in `build/dist/` directory.
 
 ## License
 
-MIT License
+Apache-2.0 license
 
 ## Contributing
 
