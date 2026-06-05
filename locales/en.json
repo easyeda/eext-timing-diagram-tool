@@ -23,7 +23,7 @@
 	"confirm": "Confirm",
 	"about-title": "About",
 	"about-app-name": "WaveDrom Timing Diagram",
-	"about-version": "Version 1.0.2",
+	"about-version": "Version 1.0.3",
 	"about-description": "A timing diagram tool based on WaveDrom, supporting creation and placement of professional digital timing diagrams in schematics. Generate high-quality waveforms quickly with concise WaveJSON syntax.",
 	"about-publisher": "Publisher:",
 	"about-license": "License:",

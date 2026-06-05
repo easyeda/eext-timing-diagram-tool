@@ -23,7 +23,7 @@
 	"confirm": "确定",
 	"about-title": "关于",
 	"about-app-name": "WaveDrom时序图",
-	"about-version": "版本 1.0.2",
+	"about-version": "版本 1.0.3",
 	"about-description": "基于 WaveDrom 的时序图绘制工具，支持在原理图中创建和放置专业的数字时序图。通过简洁的 WaveJSON 语法，快速生成高质量的波形图。",
 	"about-publisher": "发布者：",
 	"about-license": "许可证：",
