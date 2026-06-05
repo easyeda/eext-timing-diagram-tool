@@ -1,6 +1,6 @@
 {
-	"displayName": "WaveDrom时序图",
-	"description": "基于WaveDrom的时序图绘制工具，支持输入WaveJson语法完成时序图生成与预览，放置在原理图中",
+	"WaveDrom时序图": "WaveDrom时序图",
+	"基于WaveDrom的时序图绘制工具，支持输入WaveJson语法完成时序图生成与预览，放置在原理图中": "基于WaveDrom的时序图绘制工具，支持输入WaveJson语法完成时序图生成与预览，放置在原理图中",
 	"timing-diagram-menu": "WaveDrom时序图",
 	"open-timing-diagram": "绘制时序图...",
 	"about-timing-diagram": "关于...",
