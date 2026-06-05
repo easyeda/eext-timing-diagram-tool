@@ -61,5 +61,6 @@
 	"error-open-editor": "打开编辑器失败",
 	"error-no-lines": "无法从 SVG 中提取线条数据",
 	"success-applied": "时序图已插入到原理图",
-	"processing": "正在处理..."
+	"processing": "正在处理...",
+	"error-import-format-error": "配置文件格式错误"
 }

@@ -651,7 +651,7 @@ function bindEvents() {
 
                             // 验证配置文件格式
                             if (!configFile.version || !configFile.configs || !Array.isArray(configFile.configs)) {
-                                showError(t('error-import-failed') + ': 配置文件格式错误');
+                                showError(t('error-import-failed') + ': ' + t('error-import-format-error'));
                                 return;
                             }
 

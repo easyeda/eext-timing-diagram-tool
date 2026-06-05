@@ -61,5 +61,6 @@
 	"error-open-editor": "Failed to open editor",
 	"error-no-lines": "Failed to extract line data from SVG",
 	"success-applied": "Timing diagram inserted into schematic",
-	"processing": "Processing..."
+	"processing": "Processing...",
+	"error-import-format-error": "Invalid config file format"
 }

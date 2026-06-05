@@ -1,5 +1,10 @@
 {
+	"displayName": "WaveDrom Timing Diagram",
+	"description": "A timing diagram drawing tool based on WaveDrom, supporting WaveJSON syntax input for timing diagram generation and preview, placed in schematics",
 	"timing-diagram-menu": "WaveDrom Timing Diagram",
 	"open-timing-diagram": "Design Timing Diagram...",
-	"about-timing-diagram": "About..."
+	"about-timing-diagram": "About...",
+	"Timing Diagram": "Timing Diagram",
+	"WaveDrom": "WaveDrom",
+	"时序图": "Timing Diagram"
 }
