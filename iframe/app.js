@@ -141,22 +141,17 @@ function applyI18n() {
     try {
         // 更新文本内容
         document.querySelectorAll('[data-i18n]').forEach(el => {
-            if (el && el.nodeType === 1 && typeof el.getAttribute === 'function') {
-                const key = el.getAttribute('data-i18n');
-                if (key && i18nData[key]) {
-                    el.textContent = i18nData[key];
-                }
-            }
+            el.textContent = t(el.getAttribute('data-i18n'));
         });
 
         // 更新title属性
         document.querySelectorAll('[data-i18n-title]').forEach(el => {
-            if (el && el.nodeType === 1 && typeof el.getAttribute === 'function') {
-                const key = el.getAttribute('data-i18n-title');
-                if (key && i18nData[key]) {
-                    el.setAttribute('title', i18nData[key]);
-                }
-            }
+            el.setAttribute('title', t(el.getAttribute('data-i18n-title')));
+        });
+
+        // 更新placeholder属性
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+            el.setAttribute('placeholder', t(el.getAttribute('data-i18n-placeholder')));
         });
 
         // 更新页面标题
@@ -180,7 +175,11 @@ function applyI18n() {
 
 // 获取多语言文本
 function t(key) {
-    return i18nData[key] || key;
+    if (i18nData[key]) return i18nData[key];
+    try {
+        if (eda && eda.sys_I18n) return eda.sys_I18n.text(key);
+    } catch (e) {}
+    return key;
 }
 
 // 初始化
